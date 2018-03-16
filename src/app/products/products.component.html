@@ -31,12 +31,12 @@
   </mat-card>
 
   <mat-card>
+    <p>{{products.length}} Results</p>
     <mat-list>
-      
-          <mat-list-item class="itemClass" *ngFor="let product of products; let i = index">
+          <mat-list-item [@productsAnim] = "state" class="itemClass" *ngFor="let product of products; let i = index">
               <h4 mat-line>{{product.title}}</h4>
               <button mat-list-icon mat-icon-button (click)="removeProduct(i)">
-                  <mat-icon >delete</mat-icon>
+                  <mat-icon>delete</mat-icon>
               </button>
               <p mat-line>{{product.description}}</p>
               <mat-divider></mat-divider>    
