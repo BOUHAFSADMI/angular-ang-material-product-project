@@ -1,3 +1,47 @@
-<p>
-  products works!
-</p>
+<div class="divClass">
+    
+  <mat-card class="formCard">
+    <mat-card-header>
+      <mat-card-title>Add Product</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+
+    <form #form="ngForm" (ngSubmit)="addProduct(form.value)" class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Product name" name="title" [(ngModel)]="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Product description..." name="description" 
+            [(ngModel)]="description"></textarea>
+        </mat-form-field>
+    </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+          <button mat-raised-button class="example-full-width" color="primary" (click)="addProduct(form.value)">Add Product</button>
+    </mat-card-actions>
+      
+  </mat-card>
+
+  <mat-card>
+    <mat-list>
+      
+          <mat-list-item class="itemClass" *ngFor="let product of products; let i = index">
+              <h4 mat-line>{{product.title}}</h4>
+              <button mat-list-icon mat-icon-button (click)="removeProduct(i)">
+                  <mat-icon >delete</mat-icon>
+              </button>
+              <p mat-line>{{product.description}}</p>
+              <mat-divider></mat-divider>    
+          </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+</div>

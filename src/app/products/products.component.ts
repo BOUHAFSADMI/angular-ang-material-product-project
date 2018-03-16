@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  products = [
+   {'title': 'Product1', 'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'},
+   {'title': 'Product2', 'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'},
+   {'title': 'Product3', 'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry'},
+  ];
 
-  ngOnInit() {
+  title = '';
+  description = '';
+
+  constructor() {  }
+
+  ngOnInit() {  }
+
+  addProduct(value: any) {
+    this.products.push({'title': value.title, 'description': value.description});
+    this.title = '';
+    this.description = '';
+  }
+
+  removeProduct(product) {
+    this.products.splice(product, 1);
   }
 
 }

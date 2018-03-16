@@ -14,7 +14,8 @@ import {
   MatDialogModule,
   MatSnackBarModule,
   MatTooltipModule,
-  MatListModule
+  MatListModule,
+  MatFormFieldModule
 } from '@angular/material';
 
 
@@ -34,7 +35,8 @@ import {
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +53,8 @@ import {
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
   ],
 })
 
